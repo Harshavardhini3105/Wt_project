@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Subjects | AI Study Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        /* --- SUBJECT SPECIFIC STYLES --- */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .subject-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .subject-icon {
+            width: 50px;
+            height: 50px;
+            background: #f0fdf4;
+            color: #2e7d12;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .subject-info h3 { font-size: 1.25rem; margin-bottom: 5px; }
+        .subject-info p { color: #64748b; font-size: 0.9rem; margin-bottom: 25px; }
+
+        /* --- PROGRESS BAR --- */
+        .progress-container { margin-top: 15px; }
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill { height: 100%; border-radius: 10px; transition: width 1s ease-in-out; }
+
+        /* --- ADD NEW SUBJECT CARD --- */
+        .add-subject-card {
+            border: 2px dashed #cbd5e1;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #94a3b8;
+            min-height: 240px;
+        }
+        .add-subject-card:hover { border-color: #2e7d12; color: #2e7d12; background: #f0fdf4; }
+        .add-icon { font-size: 3rem; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">StudyPlanner</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><span>📊</span> Dashboard</a>
+                <a href="schedule.html"><span>📅</span> My Schedule</a>
+                <a href="subjects.html" class="active"><span>📚</span> Subjects</a>
+                <a href="analytics.html"><span>📈</span> Analytics</a>
+                <a href="settings.html"><span>⚙️</span> Settings</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="login.html" class="logout-btn"><span>🚪</span> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="greeting">
+                    <h1>My Subjects 📚</h1>
+                    <p>Track your curriculum and mastery levels.</p>
+                </div>
+                <div class="user-profile">
+                    <button class="magic-btn">+ New Subject</button>
+                </div>
+            </header>
+
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="subject-icon">📐</div>
+                    <div class="subject-info">
+                        <h3>Advanced Calculus</h3>
+                        <p>12 Tasks Remaining</p>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Mastery</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%; background: #3b82f6;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-card">
+                    <div class="subject-icon">⚛️</div>
+                    <div class="subject-info">
+                        <h3>Quantum Physics</h3>
+                        <p>8 Tasks Remaining</p>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Mastery</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%; background: #a855f7;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-card">
+                    <div class="subject-icon">💻</div>
+                    <div class="subject-info">
+                        <h3>Data Structures</h3>
+                        <p>20 Tasks Remaining</p>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Mastery</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 92%; background: #2e7d12;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-card add-subject-card">
+                    <span class="add-icon">+</span>
+                    <span class="font-bold">Add Subject</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
