@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | AI Study Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="dashboard.css"> 
+    <link rel="stylesheet" href="settings.css"> 
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-logo"> StudyPlaner</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><span>📊</span> Dashboard</a>
+                <a href="schedule.html"><span>📅</span> My Schedule</a>
+                <a href="subjects.html"><span>📚</span> Subjects</a>
+                <a href="analytics.html"><span>📈</span> Analytics</a>
+                <a href="settings.html" class="active"><span>⚙️</span> Settings</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="logout-btn"><span>🚪</span> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="topbar">
+                <div class="greeting">
+                    <h1>Settings ⚙️</h1>
+                    <p>Manage your account, preferences, and notifications.</p>
+                </div>
+                <div class="user-profile">
+                    <button class="btn-primary" id="saveSettingsBtn">Save Changes</button>
+                    <div class="avatar">K</div>
+                </div>
+            </header>
+
+            <div class="settings-grid">
+                
+                <section class="card">
+                    <h2 class="settings-section-title">👤 Profile Details</h2>
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Kalpana Sree">
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" value="kalpana@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label>School / University</label>
+                        <input type="text" placeholder="Enter your institution">
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2 class="settings-section-title">🎯 AI Study Preferences</h2>
+                    <div class="input-group">
+                        <label>Default Focus Session (Minutes)</label>
+                        <input type="number" value="50">
+                    </div>
+                    <div class="input-group">
+                        <label>Short Break Duration (Minutes)</label>
+                        <input type="number" value="10">
+                    </div>
+                    <div class="input-group">
+                        <label>Preferred Daily Study Limit (Hours)</label>
+                        <input type="number" value="6">
+                    </div>
+                </section>
+
+                <section class="card" style="grid-column: 1 / -1;">
+                    <h2 class="settings-section-title">🔔 Notifications & Appearance</h2>
+                    
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <strong>Daily Reminder</strong>
+                            <span>Get a morning email with your study schedule.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <strong>Deadline Alerts</strong>
+                            <span>Push notifications when an exam is 2 days away.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <strong>AI Study Tips</strong>
+                            <span>Receive weekly AI-generated tips based on your analytics.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | AI Study Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Global Theme Variables --- */
+        :root {
+            --bg-color: #f4f7f8;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            
+            /* THICK FOREST GREEN THEME */
+            --primary-green: #15803d; 
+            --primary-green-hover: #14532d; 
+            --primary-green-light: #dcfce7; 
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        /* Centers the card perfectly */
+        .auth-body {
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--text-main);
+        }
+
+        .auth-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 420px;
+        }
+
+        /* --- Typography --- */
+        .logo-center {
+            text-align: center;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .auth-card h2 {
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .auth-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* --- Inputs & Forms --- */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            transition: border-color 0.2s;
+            background-color: #ffffff;
+        }
+
+        /* Green glow on focus */
+        .input-group input:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-light);
+        }
+
+        /* --- Remember Me & Forgot Password --- */
+        .auth-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .remember-me input[type="checkbox"] {
+            accent-color: var(--primary-green); /* Makes the checkbox green */
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .forgot-pass {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .forgot-pass:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Primary Button --- */
+        .btn-primary.auth-btn {
+            width: 100%;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary.auth-btn:hover {
+            background-color: var(--primary-green-hover);
+        }
+
+        /* --- Divider (OR) --- */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .divider span {
+            padding: 0 15px;
+        }
+
+        /* --- Google Button --- */
+        .btn-google {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            background-color: white;
+            border: 1px solid #cbd5e1;
+            color: var(--text-main);
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-google:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        .google-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- Footer Link --- */
+        .auth-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .auth-footer a {
+            color: var(--primary-green);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="auth-body">
+
+    <div class="auth-card">
+        <div class="logo-center"> StudyPlaner</div>
+        <h2>Welcome Back</h2>
+        <p class="auth-subtitle">Log in to access your smart schedule.</p>
+
+        <form action="dashboard.html">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="student@example.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <div class="auth-options">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-pass">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn-primary auth-btn">Log In</button>
+        </form>
+
+        <div class="divider"><span>OR</span></div>
+
+        <button class="btn-google">
+            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Logo" class="google-icon">
+            Continue with Google
+        </button>
+
+        <p class="auth-footer">Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AI Study Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css"> 
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-logo">StudyPlaner</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="active"><span>📊</span> Dashboard</a>
+                <a href="schedule.html"><span>📅</span> My Schedule</a>
+                <a href="subjects.html"><span>📚</span> Subjects</a>
+                <a href="analytics.html"><span>📈</span> Analytics</a>
+                <a href="settings.html"><span>⚙️</span> Settings</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="login.html" class="logout-btn" onclick="localStorage.clear(); sessionStorage.clear();"><span>🚪</span> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="topbar">
+                <div class="greeting">
+                    <h1>Welcome back, Kalpana Sree! 👋</h1>
+                    <p>Here is your AI-optimized plan for today.</p>
+                </div>
+                <div class="user-profile">
+                    <button class="btn-primary" id="openModalBtn">➕ Add Task</button>
+                   
+                    <div class="avatar">K</div>
+                </div>
+            </header>
+
+            <section class="widgets-grid">
+                <div class="widget-card">
+                    <div class="widget-icon bg-green-light text-green">⏱️</div>
+                    <div class="widget-info">
+                        <p>Study Hours</p>
+                        <h3>12.5h <span>this week</span></h3>
+                    </div>
+                </div>
+                <div class="widget-card">
+                    <div class="widget-icon bg-green-light text-green">✅</div>
+                    <div class="widget-info">
+                        <p>Completion</p>
+                        <h3>85% <span>on track</span></h3>
+                    </div>
+                </div>
+                <div class="widget-card">
+                    <div class="widget-icon bg-red-light text-red">🚨</div>
+                    <div class="widget-info">
+                        <p>Next Deadline</p>
+                        <h3>Calculus <span>in 2 days</span></h3>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-grid">
+                <section class="todays-plan card">
+                    <div class="section-header">
+                        <h2>📅 Today's Study Plan</h2>
+                        <a href="schedule.html" class="link-green">View Calendar</a>
+                    </div>
+                    <div class="task-list" id="taskList">
+                        <p class="loading-text">Loading tasks...</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Add New Study Task</h2>
+            <form id="newTaskForm">
+                <div class="input-group">
+                    <label>Subject / Topic</label>
+                    <input type="text" id="taskSubject" required placeholder="e.g., Chapter 4: Photosynthesis">
+                </div>
+                <div class="input-group">
+                    <label>Duration (Minutes)</label>
+                    <input type="number" id="taskDuration" required placeholder="60">
+                </div>
+                <div class="input-group">
+                    <label>Exam Deadline</label>
+                    <input type="datetime-local" id="taskDeadline" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Save Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
