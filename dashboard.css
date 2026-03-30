@@ -9,8 +9,23 @@
     --primary-green: #15803d; 
     --primary-green-hover: #14532d; 
     --primary-green-light: #dcfce7; 
-    
     --danger-light: #fee2e2;
+    --danger-red: #ef4444;
+}
+
+/* --- Dark Mode Variables --- */
+body.dark-mode {
+    --bg-color: #0f172a; /* Deep elegant dark blue/gray */
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Slightly dim primary colors for better dark contrast */
+    --primary-green: #10b981; 
+    --primary-green-hover: #059669; 
+    --primary-green-light: #064e3b; 
+    
+    --danger-light: #7f1d1d;
     --danger-red: #ef4444;
 }
 

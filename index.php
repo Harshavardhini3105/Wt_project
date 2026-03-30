@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPlanner | AI-Powered Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. BASIC RESET & VARIABLES --- */
+        :root {
+            --primary: #2e7d12;
+            --secondary: #66bb2a;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        /* --- 2. NAVIGATION --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 25px; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+        .login-btn { background: var(--primary); color: white !important; padding: 10px 25px; border-radius: 50px; }
+
+        /* --- 3. HERO SECTION --- */
+        .hero {
+            padding: 160px 8% 80px;
+            text-align: center;
+            background: linear-gradient(to bottom right, #f0fdf4, #ffffff);
+        }
+
+        .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+        .highlight { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: var(--text-light); max-width: 700px; margin: 0 auto 40px; }
+
+        /* --- 4. BUTTONS --- */
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* --- 5. GRID & CARDS --- */
+        .container { padding: 80px 8%; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 50px; }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+
+        /* --- 6. HOW IT WORKS --- */
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .step { flex: 1; min-width: 200px; }
+        .step-num {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+        }
+
+        /* --- 7. FINAL CTA --- */
+        .cta-banner {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 80px 8%;
+            margin: 0 8% 80px;
+            border-radius: 30px;
+        }
+
+        /* --- 8. FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .navbar { padding: 15px 5%; }
+            .nav-links { display: none; } /* Basic mobile hide */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">StudyPlanner</a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="login.php" class="login-btn">Log In</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Study <span class="highlight">Smarter.</span><br>Not Harder.</h1>
+        <p>The study planner that adapts to your progress, reschedules missed tasks, and keeps you on track effortlessly.</p>
+        <a href="signup.php" class="btn-main">Get Started Free</a>
+    </header>
+
+    <section class="container" id="features">
+        <h2 class="section-title">Meet Your AI Assistant</h2>
+        <div class="card-grid">
+            <div class="card">
+                <span class="icon">🤖</span>
+                <h3>Auto-Timetables</h3>
+                <p>Input your deadlines, and the AI builds a custom schedule just for you.</p>
+            </div>
+            <div class="card">
+                <span class="icon">🔄</span>
+                <h3>Smart Reschedule</h3>
+                <p>Missed a day? Our algorithm redistributes tasks without overloading you.</p>
+            </div>
+            <div class="card">
+                <span class="icon">📊</span>
+                <h3>Visual Analytics</h3>
+                <p>Track your focus hours and see exactly when you study best.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="background: white;">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Add Subjects</h3>
+                <p>Tell us what you study and when the exams are.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>AI Logic</h3>
+                <p>Get a personalized study plan instantly.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Improve</h3>
+                <p>Follow the plan and let the AI adapt to your pace.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <h2>Ready to Save Your Semester?</h2>
+        <p style="margin-bottom: 30px; opacity: 0.9;">Join thousands of students who plan smarter.</p>
+        <a href="signup.php" class="btn-main" style="background: white; color: var(--primary);">Create Free Account</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 StudyPlanner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Basic JavaScript to handle successful loading
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log("StudyPlanner Landing Page is ready.");
+        });
+    </script>
+</body>
+</html>
+
