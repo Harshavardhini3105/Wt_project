@@ -69,7 +69,7 @@ progress.
 ## 👩‍💻 Developer
 
 **Harsha Vardhini**
-**Kalpana sree**
+**Karamthot Kalpana sree**
 **Kanigiri mahathi**
 **Nasreen thabassum**
 **Akhila**
